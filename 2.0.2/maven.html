@@ -9,14 +9,14 @@
   </head>
   <body>
     <h1>jslint4java maven plugin</h1>
-    
+
     <p>
       If you are using maven to build an application which contains
       JavaScript, you can arrange for JSLint to run automatically.
     </p>
-    
+
     <p>Here's an example configuration.</p>
-    
+
     <pre class="prettyprint">
 &lt;project&gt;
   …
@@ -48,18 +48,18 @@
   &lt;/build&gt;
 &lt;/project&gt;
     </pre>
-    
+
     <p>
       This will arrange for the jslint4java-maven-plugin to execute before
       the rest of your build.  If you would prefer to execute it afterwards,
       choose <code>&lt;phase&gt;verify&lt;/phase&gt;</code> instead.
     </p>
-    
+
     <p>
       If you would prefer to run the linter on an ad-hoc basis, you can
       call the plugin from the command line.
     </p>
-    
+
     <pre class="prettyprint">
 $ mvn jslint4java:lint
     </pre>
@@ -68,7 +68,7 @@ $ mvn jslint4java:lint
       In order to support this, you should still configure the plugin as part
       of your project, but not bind it to the lifecycle.  e.g.
     </p>
-    
+
     <pre class="prettyprint">
 &lt;project&gt;
   &hellip;
@@ -91,37 +91,37 @@ $ mvn jslint4java:lint
   &lt;/build&gt;
 &lt;/project&gt;
     </pre>
-    
+
     <h3 id="configuration">Configuration</h3>
-    
+
     <p>
       The plugin is mainly controlled via the
       <code>&lt;configuration&gt;</code> element.
       It supports these children.
     </p>
-    
+
     <table>
       <tr>
         <th>Element</th>
         <th>Description</th>
         <th>Default</th>
       </tr>
-      
+
       <tr>
         <td><code>&lt;encoding&gt;</code></td>
         <td>What encoding to read the source files in.</td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;encoding&gt;UTF-8&lt;/encoding&gt;
           </pre>
         </td>
       </tr>
-      
+
       <tr>
         <td><code>&lt;excludes&gt;</code></td>
         <td>A comma separated list of patterns to exclude from linting.</td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;excludes&gt;
   &lt;!-- no excludes by default --&gt;
 &lt;/excludes&gt;
@@ -133,7 +133,7 @@ $ mvn jslint4java:lint
         <td><code>&lt;includes&gt;</code></td>
         <td>A comma separated list of filename patterns lint.</td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;includes&gt;
   &lt;include&gt;**/*.js&lt;/include&gt;
 &lt;/includes&gt;
@@ -145,7 +145,7 @@ $ mvn jslint4java:lint
         <td><code>&lt;jslintSource&gt;</code></td>
         <td>An alternative <code>jslint.js</code> to use, in case the builtin version is insufficient.</td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;!-- The builtin version. --&gt;
 &lt;jslintSource&gt;&lt;/jslintSource&gt;
           </pre>
@@ -157,7 +157,7 @@ $ mvn jslint4java:lint
         <td>
           Which options to pass to JSLint.  Each option must be specified as
           child element, e.g.
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;maxlen&gt;72&lt;/maxlen&gt;
 &lt;predef&gt;console, jQuery&lt;/predef&gt;
 &lt;undef&gt;true&lt;/undef&gt;
@@ -167,7 +167,7 @@ $ mvn jslint4java:lint
           for the full list of Options that can be specified.
         </td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;options&gt;
   &lt;!-- no options enabled by default --&gt;
 &lt;/options&gt;
@@ -188,7 +188,7 @@ $ mvn jslint4java:lint
         </dl>
         </td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;outputDirectory&gt;${project.build.directory}/jslint4java&lt;/outputDirectory&gt;
           </pre>
         </td>
@@ -198,7 +198,7 @@ $ mvn jslint4java:lint
         <td><code>&lt;sourceFolders&gt;</code></td>
         <td>One or more folders to find the JavaScript files to lint.</td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;sourceFolders&gt;
   &lt;sourceFolder&gt;${basedir}/src/main/webapp&lt;/sourceFolder&gt;
 &lt;/sourceFolders&gt;
@@ -210,7 +210,7 @@ $ mvn jslint4java:lint
         <td><code>&lt;timeout&gt;</code></td>
         <td>How many seconds JSLint is allowed to run for.</td>
         <td>
-          <pre class="prettyify">
+          <pre class="prettyprint">
 &lt;!-- infinite --&gt;
 &lt;timeout&gt;0&lt;/timeout&gt;
           </pre>
@@ -218,7 +218,7 @@ $ mvn jslint4java:lint
       </tr>
 
     </table>
-    
+
     <script type="text/javascript">prettyPrint()</script>
   </body>
 </html>
